@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url("../fonts/GothPro.otf");
+}
+@font-face {
+  font-family: 'Gotham Pro Bold';
+  src: url("../fonts/GothamPro.otf");
+}
+@font-face {
+  font-family: 'Arial Semi';
+  src: url("../fonts/Arial-Bold.ttf");
+}
+.card {
+  position: relative;
+  max-width: 580px;
+  margin: 20px auto;
+  padding: 13px;
+  &__flag {
+    position: absolute;
+    left: calc(50% - 35px);
+    filter: opacity(0.2) grayscale(1);
+    width: 70px;
+  }
+  &__info {
+    margin: 30px auto 0;
+    z-index: 1;
+  }
+  &__line {
+    position: absolute;
+    left: -280px;
+    top: 260px;
+    z-index: 0;
+  }
+}
+.chart {
+  &__number {
+    font-size: 0.43em;
+    font-weight: 800;
+    line-height: 1;
+    text-anchor: middle;
+    tspan {
+      font-size: 0.45em;
+    }
+  }
+  &__percent {
+    font-family: 'Gotham Pro', sans-serif;
+    font-size: 0.15em;
+    fill: #a5a5a5;
+  }
+  &__text {
+    font-family: 'Gotham Pro', sans-serif;
+    fill: #555555;
+  }
+  &__head {
+    font-size: 0.2em;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+  }
+  &__sign {
+    font-size: 0.15em;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    fill: #f6d551;
+  }
+  &__content {
+    font-size: 0.1em;
+    font-family: Arial, sans-serif;
+    fill: #a5a5a5;
+  }
+  &__count {
+    font-size: 0.14em;
+    font-family: Arial, sans-serif;
+    fill: #6fa84b;
+  }
+}
+.card-row {
+  display: flex;
+  align-items: flex-start;
+  max-width: 450px;
+  &__label {
+    font-family: 'Arial Semi', sans-serif;
+    font-size: 1.4em;
+    color: rgba(92, 92, 92, 0.9);
+    margin-right: 20px;
+    width: 143px;
+  }
+  &__percents {
+    font-family: 'Arial Semi', sans-serif;
+    font-size: 1.4em;
+    color: rgba(92, 92, 92, 0.9);
+    margin-right: 25px;
+    text-align: end;
+    span {
+      font-family: Arial, sans-serif;
+      color: #999;
+    }
+    svg {
+      width: 19px;
+      height: 20px;
+      margin-top: -4px;
+      filter: opacity(0.4);
+    }
+  }
+  &__bar {
+    font-family: Arial, sans-serif;
+    font-size: 1.4em;
+    color: rgb(125, 125, 125);
+    width: 168px;
+    height: 62px;
+    background-color: #f9f9f9;
+    border: 3px solid #eeeeee;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: end;
+    position: relative;
+    transition: 0.3s;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: -3px;
+      border-radius: 6px 0 0 0;
+      transition: 0.3s;
+      z-index: 1;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: -3px;
+      border-radius: 0 0 0 6px;
+      z-index: 0;
+    }
+  }
+}
+.first-bar {
+  &::before {
+    width: 62px;
+    height: 48px;
+    background-color: #6fa84b;
+  }
+  &::after {
+    width: 55px;
+    height: 16px;
+    background-color: #b5d0a2;
+  }
+}
+.second-bar {
+  &::before {
+    width: 63px;
+    height: 48px;
+    background-color: #fbd32a;
+  }
+  &::after {
+    width: 53px;
+    height: 16px;
+    background-color: #fae691;
+  }
+}
+.third-bar {
+  &::before {
+    width: 50px;
+    height: 48px;
+    background-color: #ec5243;
+  }
+  &::after {
+    width: 57px;
+    height: 16px;
+    background-color: #f3a69f;
+  }
+}
